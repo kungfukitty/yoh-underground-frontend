@@ -1,0 +1,22 @@
+// File: tsconfig.json (in your frontend project root)
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": [ "DOM", "DOM.Iterable", "ESNext" ],
+    "allowJs": false,
+    "skipLibCheck": true, // Essential for ignoring issues in node_modules types
+    "esModuleInterop": true, // Crucial for import/export compatibility for React
+    "allowSyntheticDefaultImports": true,
+    "strict": true, // Recommended for stronger type checking
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext", // Output ES Modules
+    "moduleResolution": "bundler", // Or "node" depending on your setup (bundler is common with Vite/Webpack)
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx" // Crucial for JSX compilation in React 17+
+  },
+  "include": [ "src" ], // Tells TypeScript to include files in the 'src' directory
+  "references": [ { "path": "./tsconfig.node.json" } ] // Common for Vite/some React setups
+}
